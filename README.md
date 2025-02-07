@@ -1,5 +1,5 @@
 # Loan-Risk-Analysis-and-Prediction-Using-Machine-Learning-Models
-This report explores the application of machine learning models in loan risk analysis, highlighting their potential to transform the lending industry.
+
 # Data Collection and Preprocessing
 Dataset was taken from Kaggle website, where we can explore, analyze, and share quality data. Dataset name: “Loan_data”, publicly available data from LendingClub.com. Lending Club connects
 people who need money (borrowers) with people who have money (investors). Hopefully, as an
