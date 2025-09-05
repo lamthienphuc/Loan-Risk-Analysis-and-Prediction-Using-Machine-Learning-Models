@@ -160,21 +160,15 @@ What are Hyperparameters?
 Hyperparameters are the parameters of a machine learning model that are not learned from the data
 but are set before the training process begins. They control the behavior of the training algorithm
 and the structure of the model.
+
 Why Tune Hyperparameters?
 Hyperparameter tuning is crucial because the performance of a machine learning model can be
-significantly affected by the choice of hyperparameters. Proper tuning can lead to:
+significantly affected by the choice of hyperparameters. 
+
+Proper tuning can lead to:
 Improved Accuracy: Better generalization to unseen data.
 Reduced Overfitting: Prevents the model from learning noise in the training data. 
 Optimized Training Time: Efficient use of computational resources. 
-
-K-Nearest Neighbors Performance:
-precision recall f1-score support
-0 1.00 1.00 1.00 1611
-1 1.00 1.00 1.00 305
-accuracy 1.00 1916
-macro avg 1.00 1.00 1.00 1916
-weighted avg 1.00 1.00 1.00 1916
-ROC-AUC: 1.0
 
 # Model Evaluation
 
@@ -256,43 +250,43 @@ Summary of Predicted Results (Random Forest):
 
 Actual Predicted_RF Predicted_RF_Prob
 
-8558     0 1         0.67
+8558       0           1         0.67
 
-4629     0 0         0.17
+4629       0           0         0.17
 
-1383     1 0         0.14
+1383       1           0         0.14
 
-8142     0 0         0.18
+8142       0           0         0.18
 
-1768     0 0         0.06
+1768       0           0         0.06
 
 Summary of Predicted Results (K-Nearest Neighbors):
 
 Actual Predicted_KNN Predicted_KNN_Prob
 
-8558     0 1             1.0
+8558       0        1             1.0
 
-4629     0 0             0.0
+4629       0        0             0.0
 
-1383     1 0             0.0
+1383       1        0             0.0
 
-8142     0 0             0.0
+8142       0        0             0.0
 
-1768     0 0             0.0
+1768       0        0             0.0
 
 Summary of Predicted Results (Gradient Boosting):
 
 Actual Predicted_GB Predicted_GB_Prob
 
-8558     0 1           0.687005
+8558       0         1               0.687005
 
-4629     0 0           0.455550
+4629       0         0               0.455550
 
-1383     1 0           0.276111
+1383       1         0               0.276111
 
-8142     0 0           0.441451
+8142       0         0               0.441451
 
-1768     0 0            0.250791
+1768       0         0               0.250791
 
 The Random Forest model has some misclassifications. For instance, it incorrectly predicts that
 instance 8558 will fully pay the loan with a relatively high probability (0.67). 
@@ -317,43 +311,38 @@ their predictions and some potential conclusions:
 Predictions Summary
 
 FICO Score: 700, Interest Rate: 0.125
-
 KNN: Will fully pay the loan. 
-
 Gradient Boosting: Will not fully pay the loan. 
-
 Random Forest: Will fully pay the loan.
 
 FICO Score: 600, Interest Rate: 0.2
-
 KNN: Will fully pay the loan. 
-
 Gradient Boosting: Will not fully pay the loan. 
-
 Random Forest: Will not fully pay the loan.
 
 FICO Score: 800, Interest Rate: 0.3
-
 KNN: Will fully pay the loan. 
-
 Gradient Boosting: Will not fully pay the loan. 
-
 Random Forest: Will fully pay the loan.
+
 
 Model Differences:
 KNN consistently predicts that borrowers will fully pay the loan across all profiles. Gradient Boosting consistently predicts that borrowers will not fully pay the loan across all profiles. Random Forest predictions are similar to KNN for profiles with higher FICO scores but align with
 Gradient Boosting for lower FICO scores and higher interest rates. 
+
 
 FICO Score Impact:
 Higher FICO scores generally indicate a better credit history and a higher likelihood of loan
 repayment. Gradient Boosting seems more conservative, predicting non-repayment even for higher FICO
 scores, possibly due to a higher sensitivity to interest rates or other factors. 
 
+
 Interest Rate Impact:
 Higher interest rates are generally associated with higher risk, which can affect the likelihood of
 loan repayment. KNN and Random Forest might weigh FICO scores more heavily than interest rates, leading to
 more optimistic predictions for high-FICO-score borrowers despite high interest rates. Gradient Boosting might consider the interest rate more heavily, leading to a pessimistic prediction
 even for high-FICO-score borrowers with high interest rates. 
+
 
 In summary, while KNN and Random Forest are more optimistic about loan repayment, Gradient
 Boosting is more conservative. The differences highlight the importance of model selection and the
